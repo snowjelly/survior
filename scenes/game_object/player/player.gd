@@ -32,16 +32,13 @@ func _process(delta):
 	move_and_slide()
 	
 	if movement_vector.x != 0 || movement_vector.y != 0:
-		var move_sign_x = sign(movement_vector.x)
-		var move_sign_y = sign(movement_vector.y)
-		if move_sign_x > 0:
-			animation_player.play("walk_right")
-		if move_sign_x < 0:
-			animation_player.play('walk_left')
-		else:
-			animation_player.play('walk_right')
+		animation_player.play('walk_right')
 	else:
 		animation_player.play("RESET")
+	
+	var move_sign = sign(movement_vector.x)
+	if move_sign != 0:
+		visuals.scale = Vector2(move_sign, 1)
 
 
 func get_movement_vector():
