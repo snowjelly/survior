@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 kenney_tinydungeon
+zombie.png
+dungeon_pack
